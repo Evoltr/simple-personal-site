@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap");
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto Mono", monospace;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.animated-background {
+    background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(-10deg); }
+    20% { transform: rotate(10deg); }
+    30% { transform: rotate(-10deg); }
+    40% { transform: rotate(10deg); }
+    50% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.h1-wave {
+    display: inline-block;
+    animation: wave-animation 2s infinite ease-in-out;
+}
+
+.blink {
+    animation: blink-animation 1s steps(5, start) infinite;
+    -webkit-animation: blink-animation 1s steps(5, start) infinite;
+  }
+  
+  @keyframes blink-animation {
+    to {
+      visibility: hidden;
+    }
+  }
+  
+  @-webkit-keyframes blink-animation {
+    to {
+      visibility: hidden;
+    }
+  }
+
+.name {
+    font-weight: bold;
+}
+
+.social-icons {
+    margin-top: 2rem;
+    align-items: center;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+}
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0.5rem;
+    width: 60px;
+    height: 60px;
+    background-color: #adcae6;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.2); /* Subtle glow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: #72bcd4;
+    transform: scale(1.1) rotate(10deg); /* Scale and rotate */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Enhanced glow */
+}
+
