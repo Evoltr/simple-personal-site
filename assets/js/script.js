@@ -30,31 +30,29 @@ const cursor = document.getElementById("cursor");
 
 // Function to type out the current string
 function type() {
-    if (charIndex < textArray[textArrayIndex].length) {
-        typedText.textContent += textArray[textArrayIndex].charAt(charIndex);
-        charIndex++;
-        setTimeout(type, typingSpeed);
-    } else {
+    // If finished typing the current string, schedule erase and return early.
+    if (charIndex >= textArray[textArrayIndex].length) {
         setTimeout(erase, typingDelay);
+        return;
     }
+
+    // Append the next character and schedule the next call.
+    typedText.textContent += textArray[textArrayIndex].charAt(charIndex++);
+    setTimeout(type, typingSpeed);
 }
 
 // Function to erase the current string
 function erase() {
-    if (charIndex > 0) {
-        typedText.textContent = textArray[textArrayIndex].substring(
-            0,
-            charIndex - 1
-        );
-        charIndex--;
-        setTimeout(erase, erasingSpeed);
-    } else {
-        textArrayIndex++;
-        if (textArrayIndex >= textArray.length) {
-            textArrayIndex = 0;
-        }
+    // If finished erasing the current string, reset for the next string and schedule type.
+    if (charIndex === 0) {
+        textArrayIndex = (textArrayIndex + 1) % textArray.length;
         setTimeout(type, erasingDelay);
+        return;
     }
+
+    // Erase the last character and schedule the next call.
+    typedText.textContent = textArray[textArrayIndex].substring(0, --charIndex);
+    setTimeout(erase, erasingSpeed);
 }
 
 // Start the typing animation on page load
