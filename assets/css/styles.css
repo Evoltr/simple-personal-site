@@ -10,6 +10,232 @@ body {
     overflow: hidden;
 }
 
+/* General styling for the navbar */
+.navbar {
+    width: 100%;
+    background: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 10px 20px;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar-links {
+    display: flex;
+    margin-right: 20px;
+}
+
+.navbar-links a {
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: transform 0.3s, color 0.3s;
+    margin: 0 10px;
+}
+
+.navbar-links a:hover {
+    transform: scale(1.2);
+    color: #72bcd4;
+}
+
+/* General styling for the modals */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    animation: zoomIn 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.modal-content.closing {
+    animation: zoomOut 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    font-size: 2rem;
+    color: #333;
+}
+
+.modal-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+.modal-content h3 {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* About me modal styling */
+.skills-list,
+.tools-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.skills-list li,
+.tools-list li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #444;
+    width: 150px;
+}
+
+.icon-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.skills-list li img,
+.tools-list li img {
+    width: 40px;
+    height: 40px;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.progress {
+    height: 8px;
+    background-color: #72bcd4;
+    border-radius: 5px;
+}
+
+/* Contact text styling */
+.contact-text {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: #444;
+    text-align: center;
+}
+
+.contact-text a {
+    color: #72bcd4;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-text a:hover {
+    text-decoration: underline;
+}
+
+/* Keyframes for navbar & modal animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomOut {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+}
+
+/* Responsive styling */
+@media screen and (max-width: 600px) {
+    .navbar-container {
+        justify-content: center;
+    }
+
+    .navbar-links {
+        margin-right: 0;
+    }
+
+    .navbar-links a {
+        margin: 0 5px;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+
+    .skills-list,
+    .tools-list {
+        justify-content: center;
+    }
+}
+
+/* Center page styling */
 .animated-background {
     background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364);
     background-size: 400% 400%;
@@ -20,9 +246,11 @@ body {
     0% {
         background-position: 0% 50%;
     }
+
     50% {
         background-position: 100% 50%;
     }
+
     100% {
         background-position: 0% 50%;
     }
@@ -38,13 +266,33 @@ body {
 }
 
 @keyframes wave-animation {
-    0% { transform: rotate(0deg); }
-    10% { transform: rotate(-10deg); }
-    20% { transform: rotate(10deg); }
-    30% { transform: rotate(-10deg); }
-    40% { transform: rotate(10deg); }
-    50% { transform: rotate(0deg); }
-    100% { transform: rotate(0deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    10% {
+        transform: rotate(-10deg);
+    }
+
+    20% {
+        transform: rotate(10deg);
+    }
+
+    30% {
+        transform: rotate(-10deg);
+    }
+
+    40% {
+        transform: rotate(10deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 .h1-wave {
@@ -55,19 +303,19 @@ body {
 .blink {
     animation: blink-animation 1s steps(5, start) infinite;
     -webkit-animation: blink-animation 1s steps(5, start) infinite;
-  }
-  
-  @keyframes blink-animation {
+}
+
+@keyframes blink-animation {
     to {
-      visibility: hidden;
+        visibility: hidden;
     }
-  }
-  
-  @-webkit-keyframes blink-animation {
+}
+
+@-webkit-keyframes blink-animation {
     to {
-      visibility: hidden;
+        visibility: hidden;
     }
-  }
+}
 
 .name {
     font-weight: bold;
@@ -90,15 +338,14 @@ body {
     margin: 0 0.5rem;
     width: 60px;
     height: 60px;
-    background-color: #adcae6;
+    background-color: #e0e0e0;
     border-radius: 50%;
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.2); /* Subtle glow */
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .social-icons a:hover {
     background-color: #72bcd4;
-    transform: scale(1.1) rotate(10deg); /* Scale and rotate */
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Enhanced glow */
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 }
-

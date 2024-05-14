@@ -26,7 +26,7 @@ const typingDelay = 1500;
 const erasingDelay = 1000;
 
 // Blink animation toggle
-const cursor = document.getElementById("cursor");
+const blink = document.getElementById("blink");
 
 // Function to type out the current string
 function type() {
@@ -58,4 +58,48 @@ function erase() {
 // Start the typing animation on page load
 document.addEventListener("DOMContentLoaded", () => {
     setTimeout(type, typingDelay);
+});
+
+// Modal functionality
+const aboutMeModal = document.getElementById("about-me-modal");
+const portfolioModal = document.getElementById("portfolio-modal");
+const aboutMeLink = document.getElementById("about-me-link");
+const portfolioLink = document.getElementById("portfolio-link");
+const closeAboutMe = document.getElementById("close-about-me");
+const closePortfolio = document.getElementById("close-portfolio");
+
+function closeModal(modal) {
+    const modalContent = modal.querySelector('.modal-content');
+    modalContent.classList.add('closing');
+    setTimeout(() => {
+        modal.style.display = 'none';
+        modalContent.classList.remove('closing');
+    }, 300);
+}
+
+aboutMeLink.addEventListener("click", () => {
+    event.preventDefault();
+    aboutMeModal.style.display = "block";
+});
+
+portfolioLink.addEventListener("click", () => {
+    event.preventDefault();
+    portfolioModal.style.display = "block";
+});
+
+closeAboutMe.addEventListener("click", () => {
+    aboutMeModal.style.display = "none";
+});
+
+closePortfolio.addEventListener("click", () => {
+    portfolioModal.style.display = "none";
+});
+
+window.addEventListener("click", (event) => {
+    if (event.target == aboutMeModal) {
+        closeModal(aboutMeModal);
+    }
+    if (event.target == portfolioModal) {
+        closeModal(portfolioModal);
+    }
 });

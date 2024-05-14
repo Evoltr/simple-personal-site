@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Yarno Bruggink</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
+
 <body>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-links">
+                <a href="#" id="about-me-link">About Me</a>
+                <a href="#" id="portfolio-link">Portfolio</a>
+            </div>
+        </div>
+    </nav>
     <div class="animated-background">
         <div class="center">
             <h1>
@@ -22,12 +33,86 @@
                 <a href="https://www.linkedin.com/in/yarno-bruggink-698b1116b/" target="_blank">
                     <img src="assets/icons/linkedin.svg" alt="linkedin">
                 </a>
-                <a href="mailto:evoltryarno@gmail.com" target="_blank">
+                <a href="mailto:me@yarnobruggink.nl" target="_blank">
                     <img src="assets/icons/email.svg" alt="mail">
                 </a>
             </div>
         </div>
     </div>
-<script src="assets/js/script.js"></script>
+
+    <div id="about-me-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-about-me">&times;</span>
+            <h2>About Me</h2>
+            <p>
+                Hi, I'm Yarno Bruggink, a 24 year old tech enthusiast from the Netherlands with expertise in creating
+                modern and responsive websites.
+                With a strong foundation in front-end development, I enjoy transforming creative ideas into beautiful,
+                user-friendly digital experiences.
+                I love working with new technologies and constantly strive to improve my skills.
+            </p>
+            <h3>Programming Languages</h3>
+            <ul class="skills-list">
+                <li>
+                    <div class="icon-text">
+                        <img src="assets/icons/html.svg" alt="HTML Icon"> HTML
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%;"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="icon-text">
+                        <img src="assets/icons/css.svg" alt="CSS Icon"> CSS
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%;"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="icon-text">
+                        <img src="assets/icons/javascript.svg" alt="JavaScript Icon"> JavaScript
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 60%;"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="icon-text">
+                        <img src="assets/icons/java.svg" alt="Java Icon"> Java
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 60%;"></div>
+                    </div>
+                </li>
+            </ul>
+            <h3>Tools</h3>
+            <ul class="tools-list">
+                <li><img src="assets/icons/visual-studio-code.svg" alt="VSCode Icon"> VSCode</li>
+                <li><img src="assets/icons/git.svg" alt="Git Icon"> git</li>
+                <li><img src="assets/icons/npm.svg" alt="npm Icon"> npm</li>
+                <li><img src="assets/icons/chatgpt.svg" alt="AI Icon"> AI</li>
+                <li><img src="assets/icons/mysql.svg" alt="MySQL Icon"> MySQL</li>
+                <li><img src="assets/icons/nodejs.svg" alt="AI Icon"> NodeJS</li>
+                <li><img src="assets/icons/centos.svg" alt="CentOS Icon">CentOS</li>
+                <li><img src="assets/icons/bootstrap.svg" alt="Bootstrap Icon">Bootstrap</li>
+            </ul>
+            <p class="contact-text">
+                Want to work with me? I'm always up for a new challenge! <a href="mailto:me@yarnobruggink.nl">Contact
+                    me</a>.
+            </p>
+        </div>
+    </div>
+
+
+    <div id="portfolio-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-portfolio">&times;</span>
+            <h2>Portfolio</h2>
+            <p>Coming soonTM</p>
+        </div>
+    </div>
+    <script src="assets/js/script.js"></script>
 </body>
+
 </html>
